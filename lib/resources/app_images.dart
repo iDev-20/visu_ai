@@ -47,5 +47,8 @@ class AppImages {
   static SvgPicture svgX = SvgPicture.asset('assets/svgs/x.svg');
   static SvgPicture svgIn = SvgPicture.asset('assets/svgs/In.svg');
   static SvgPicture svgPersonGrey = SvgPicture.asset('assets/svgs/person_grey.svg');
+  static SvgPicture svgBookmark = SvgPicture.asset('assets/svgs/bookmark.svg');
+  static SvgPicture svgDownload = SvgPicture.asset('assets/svgs/download.svg');
+  static SvgPicture svgSupervisorAccount = SvgPicture.asset('assets/svgs/supervisor_account.svg');
   static SvgPicture svgSelectedCheckBoxWithBlackTick = SvgPicture.asset('assets/svgs/selected_check_box_with_black_tick.svg');
 }
