@@ -4,7 +4,6 @@ import 'package:visu_ai/components/app_page.dart';
 import 'package:visu_ai/components/categories.dart';
 import 'package:visu_ai/components/category_tab.dart';
 import 'package:visu_ai/components/section_header.dart';
-import 'package:visu_ai/resources/app_colors.dart';
 import 'package:visu_ai/resources/app_images.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -28,21 +27,9 @@ class SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return AppPage(
-      child: Row(
-        children: [
-          AppImages.svgArrowLeftAlt,
-          const SizedBox(
-            width: 13.25,
-          ),
-          const Text(
-            'Back',
-            style: TextStyle(
-                color: AppColors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600),
-          )
-        ],
-      ),
+      hasGradientBackground: false,
+      hasActionOne: true,
+      hasLeadingOne: false,
       children: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(

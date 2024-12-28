@@ -52,4 +52,11 @@ class AppImages {
   static SvgPicture svgSupervisorAccount = SvgPicture.asset('assets/svgs/supervisor_account.svg');
   static SvgPicture svgArrowLeftAlt = SvgPicture.asset('assets/svgs/arrow_left_alt.svg');
   static SvgPicture svgSelectedCheckBoxWithBlackTick = SvgPicture.asset('assets/svgs/selected_check_box_with_black_tick.svg');
+  static SvgPicture svgShare = SvgPicture.asset('assets/svgs/share.svg');
+  static SvgPicture svgMore = SvgPicture.asset('assets/svgs/more.svg');
+  static SvgPicture svgBookmarkYellow = SvgPicture.asset('assets/svgs/bookmark_yellow.svg');
+  static SvgPicture svgContentCopy = SvgPicture.asset('assets/svgs/content_copy.svg');
+  static SvgPicture svgCrop = SvgPicture.asset('assets/svgs/crop.svg');
+  static SvgPicture svgInvertColors = SvgPicture.asset('assets/svgs/invert_colors.svg');
+  static SvgPicture svgDynamicFeed = SvgPicture.asset('assets/svgs/dynamic_feed.svg');
 }
