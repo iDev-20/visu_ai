@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:visu_ai/components/app_buttons.dart';
 import 'package:visu_ai/components/app_page.dart';
+import 'package:visu_ai/components/image_options.dart';
 import 'package:visu_ai/resources/app_colors.dart';
 import 'package:visu_ai/resources/app_images.dart';
 
@@ -154,7 +154,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: AppColors.secondBlack)),
+                      border:
+                          Border.all(width: 2.0, color: AppColors.secondBlack)),
                   child: AppImages.svgContentCopy,
                 ),
               ],
@@ -180,12 +181,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                imageOptions(icon: AppImages.svgCrop, option: 'Crop Image'),
+                ImageOptions(icon: AppImages.svgCrop, option: 'Crop Image'),
                 const SizedBox(width: 8.18),
-                imageOptions(
+                ImageOptions(
                     icon: AppImages.svgInvertColors, option: 'Edit Colors'),
                 const SizedBox(width: 8.18),
-                imageOptions(
+                ImageOptions(
                     icon: AppImages.svgDynamicFeed, option: 'Remove BG'),
               ],
             ),
@@ -199,30 +200,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget imageOptions({required SvgPicture icon, required String option}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 7.2),
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: AppColors.secondBlack),
-      ),
-      child: Row(
-        children: [
-          icon,
-          const SizedBox(width: 2),
-          Text(
-            option,
-            style: const TextStyle(
-                color: AppColors.white,
-                fontSize: 11.68,
-                fontWeight: FontWeight.w600),
-          ),
-        ],
       ),
     );
   }

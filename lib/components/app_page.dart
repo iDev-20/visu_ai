@@ -3,17 +3,18 @@ import 'package:visu_ai/resources/app_colors.dart';
 import 'package:visu_ai/resources/app_images.dart';
 
 class AppPage extends StatelessWidget {
-  const AppPage(
-      {super.key,
-      required this.children,
-      required this.hasLeadingOne,
-      required this.hasActionOne,
-      required this.hasGradientBackground});
+  const AppPage({
+    super.key,
+    required this.hasLeadingOne,
+    required this.hasActionOne,
+    required this.hasGradientBackground,
+    required this.children,
+  });
 
-  final Widget children;
   final bool hasLeadingOne;
   final bool hasActionOne;
   final bool hasGradientBackground;
+  final Widget children;
 
   @override
   Widget build(BuildContext context) {

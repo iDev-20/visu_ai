@@ -59,4 +59,7 @@ class AppImages {
   static SvgPicture svgCrop = SvgPicture.asset('assets/svgs/crop.svg');
   static SvgPicture svgInvertColors = SvgPicture.asset('assets/svgs/invert_colors.svg');
   static SvgPicture svgDynamicFeed = SvgPicture.asset('assets/svgs/dynamic_feed.svg');
+  static SvgPicture svgCrown = SvgPicture.asset('assets/svgs/crown.svg');
+  static SvgPicture svgCropFree = SvgPicture.asset('assets/svgs/crop_free.svg');
+  static SvgPicture svgEdit = SvgPicture.asset('assets/svgs/edit.svg');
 }
