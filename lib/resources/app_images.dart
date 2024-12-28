@@ -62,4 +62,9 @@ class AppImages {
   static SvgPicture svgCrown = SvgPicture.asset('assets/svgs/crown.svg');
   static SvgPicture svgCropFree = SvgPicture.asset('assets/svgs/crop_free.svg');
   static SvgPicture svgEdit = SvgPicture.asset('assets/svgs/edit.svg');
+  static SvgPicture svgCrownYellow = SvgPicture.asset('assets/svgs/crown_yellow.svg');
+  static SvgPicture avgAddPhoto = SvgPicture.asset('assets/svgs/add_photo.svg');
+  static SvgPicture svg3User = SvgPicture.asset('assets/svgs/3_user.svg');
+  static SvgPicture svgFilter = SvgPicture.asset('assets/svgs/Filter.svg');
+  static SvgPicture svgSetting = SvgPicture.asset('assets/svgs/Setting.svg');
 }

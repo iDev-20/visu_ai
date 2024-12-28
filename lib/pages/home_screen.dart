@@ -5,7 +5,6 @@ import 'package:visu_ai/components/category_tab.dart';
 import 'package:visu_ai/components/navigation.dart';
 import 'package:visu_ai/components/section_header.dart';
 import 'package:visu_ai/pages/details_screen.dart';
-import 'package:visu_ai/pages/search_screen.dart';
 import 'package:visu_ai/resources/app_colors.dart';
 import 'package:visu_ai/resources/app_images.dart';
 
@@ -17,6 +16,8 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
+
+int selectedDrawerIndex = 0;
 
 class _HomePageState extends State<HomePage> {
   int? selectedIndex = 0;
@@ -174,13 +175,9 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SectionHeader(
+                const SectionHeader(
                   header: 'List Category',
                   subHeader: 'View all',
-                  onTap: () {
-                    Navigation.navigateToScreen(
-                        context: context, screen: const SearchScreen());
-                  },
                 ),
                 const SizedBox(
                   height: 10,
