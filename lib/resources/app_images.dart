@@ -50,5 +50,6 @@ class AppImages {
   static SvgPicture svgBookmark = SvgPicture.asset('assets/svgs/bookmark.svg');
   static SvgPicture svgDownload = SvgPicture.asset('assets/svgs/download.svg');
   static SvgPicture svgSupervisorAccount = SvgPicture.asset('assets/svgs/supervisor_account.svg');
+  static SvgPicture svgArrowLeftAlt = SvgPicture.asset('assets/svgs/arrow_left_alt.svg');
   static SvgPicture svgSelectedCheckBoxWithBlackTick = SvgPicture.asset('assets/svgs/selected_check_box_with_black_tick.svg');
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:visu_ai/pages/home_page.dart';
+import 'package:visu_ai/pages/home_screen.dart';
 
 class Navigation {
   Navigation._();

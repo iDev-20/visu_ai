@@ -44,20 +44,29 @@ class SearchTextFormField extends StatelessWidget {
     return Container(
       height: 42,
       decoration: BoxDecoration(
-        color: AppColors.darkBkack,
+        color: AppColors.secondBlack,
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: TextField(
         autofocus: autofocus,
         cursorColor: AppColors.yellow,
+        style: const TextStyle(
+          color: AppColors.white,
+          fontSize: 13,
+          fontWeight: FontWeight.w400,
+        ),
         decoration: InputDecoration(
+            suffixIcon: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: suffixWidget,
+            ),
             prefixIconConstraints:
                 const BoxConstraints(maxHeight: 36, maxWidth: 36),
-            contentPadding: const EdgeInsets.only(top: 4, left: 10, right: 10),
+            contentPadding: const EdgeInsets.only(top: 10, left: 10, right: 10),
             hintText: hintText ?? 'Search',
             hintStyle: const TextStyle(
-              color: AppColors.subtleGrey,
-              fontSize: 12,
+              color: AppColors.white,
+              fontSize: 13,
               fontWeight: FontWeight.w400,
             ),
             border: InputBorder.none,
@@ -66,7 +75,7 @@ class SearchTextFormField extends StatelessWidget {
               child: AppImages.svgSearchOn,
             )),
         inputFormatters: inputFormatters,
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.text,
         controller: controller,
         onChanged: onChanged,
       ),
@@ -150,9 +159,8 @@ class PrimaryTextFormField extends StatelessWidget {
           Container(
             height: 48,
             decoration: BoxDecoration(
-              color: AppColors.darkBkack,
-              borderRadius: BorderRadius.circular(12)
-            ),
+                color: AppColors.darkBkack,
+                borderRadius: BorderRadius.circular(12)),
             child: TextFormField(
               autofocus: autofocus,
               style: const TextStyle(
