@@ -15,6 +15,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  bool? isSelected;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +67,21 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Row(
                   children: [
-                    AppImages.svgSelectedCheckBoxWithBlackTick,
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isSelected = true;
+                        });
+                      },
+                      child: Visibility(
+                        visible: isSelected ?? false,
+                        replacement: SizedBox(
+                            height: 23,
+                            width: 23,
+                            child: AppImages.svgEmptyCheckBox),
+                        child: AppImages.svgSelectedCheckBoxWithBlackTick,
+                      ),
+                    ),
                     const SizedBox(width: 6),
                     const Text(
                       'Agree with ',
@@ -97,6 +112,7 @@ class _SignUpPageState extends State<SignUpPage> {
               onTap: () {
                 Navigation.navigateToHomePage(context: context);
               },
+              enabled: isSelected ?? false,
               contentPadding: const EdgeInsets.symmetric(vertical: 14.5),
               child: const Text('Get Started'),
             ),

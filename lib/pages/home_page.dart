@@ -27,7 +27,8 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+    Scaffold(
       backgroundColor: AppColors.darkBkack,
       body: SafeArea(
         child: ListView(
