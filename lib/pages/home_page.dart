@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-// import 'package:visu_ai/components/app_tab_bar.dart';
+import 'package:visu_ai/components/category_card.dart';
+import 'package:visu_ai/components/category_tab.dart';
 import 'package:visu_ai/resources/app_colors.dart';
 import 'package:visu_ai/resources/app_images.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, this.tabIndex = 0});
-
-  final int tabIndex;
+  const HomePage({
+    super.key,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -14,25 +15,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  List<String> tabItems = [
+  int? selectedIndex = 0;
+
+  List<String> categories = [
     'All',
     'Character',
     'Fan Art',
     'SCi-Fi',
     'Fairy Tales',
   ];
-
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 5, vsync: this);
-    _tabController.index = widget.tabIndex;
-    _tabController.addListener(() {
-      setState(() {});
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -228,65 +219,114 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 30, right: 30, bottom: 30),
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'List Category',
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        'View all',
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
+                  sectionHeader(header: 'List Category', subHeader: 'View all'),
+                  const SizedBox(
                     height: 10,
                   ),
-                  // DefaultTabController(
-                  //   length: 5,
-                  //   child: Column(
-                  //     children: [
-                  //       AppTabBar(
-                  //         tabItems: [
-                  //           for (int i = 0; i < tabItems.length; i++)
-                  //             TabBarData(
-                  //                 index: i,
-                  //                 title: tabItems[i],
-                  //                 isSelected: _tabController.index == i,
-                  //                 onTap: () {}),
-                  //         ],
-                  //       ),
-                  //       // TabBarView(
-                  //       //   controller: _tabController,
-                  //       //   children: const [
-                  //       //     Text('data'),
-                  //       //     Text('data'),
-                  //       //     Text('data'),
-                  //       //     Text('data'),
-                  //       //     Text('data'),
-                  //       //   ],
-                  //       // ),
-                  //     ],
-                  //   ),
-                  // ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: List.generate(
+                      categories.length,
+                      (index) => CategoryTab(
+                        title: categories[index],
+                        isSelected: selectedIndex == index,
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                            height: 188,
+                            width: 179,
+                            child: CategoryCard(title: 'Surealisme')),
+                        SizedBox(
+                            height: 188,
+                            width: 179,
+                            child: CategoryCard(title: 'Animals')),
+                        SizedBox(
+                            height: 188,
+                            width: 179,
+                            child: CategoryCard(title: 'Humanisme')),
+                        SizedBox(
+                            height: 188,
+                            width: 179,
+                            child: CategoryCard(title: 'Geography')),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  sectionHeader(header: 'Trending AI', subHeader: 'see all'),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  const SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                            height: 128.35,
+                            width: 122.2,
+                            child: CategoryCard(title: 'Surealisme')),
+                        SizedBox(
+                            height: 128.35,
+                            width: 122.2,
+                            child: CategoryCard(title: 'Animals')),
+                        SizedBox(
+                            height: 128.35,
+                            width: 122.2,
+                            child: CategoryCard(title: 'Humanisme')),
+                        SizedBox(
+                            height: 128.35,
+                            width: 122.2,
+                            child: CategoryCard(title: 'Geography')),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget sectionHeader({required String header, required String subHeader}) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          header,
+          style: const TextStyle(
+              color: AppColors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.w600),
+        ),
+        Text(
+          subHeader,
+          style: const TextStyle(
+              color: AppColors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.w600),
+        ),
+      ],
     );
   }
 }
