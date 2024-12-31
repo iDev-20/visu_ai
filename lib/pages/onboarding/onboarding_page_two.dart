@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:visu_ai/components/app_buttons.dart';
 import 'package:visu_ai/components/navigation.dart';
+import 'package:visu_ai/components/slide_indicator.dart';
 import 'package:visu_ai/pages/onboarding/login_page.dart';
 import 'package:visu_ai/resources/app_colors.dart';
 
@@ -69,13 +70,16 @@ class _ObBoardingPageState extends State<OnboardingPageTwo> {
               textAlign: TextAlign.center,
             ),
           ),
-          Container(
-            height: 6,
-            width: 122,
-            decoration: BoxDecoration(
-                color: AppColors.yellow,
-                borderRadius: BorderRadius.circular(8)),
+          const SlideIndicator(
+            selectedIndex: true,
           ),
+          // Container(
+          //   height: 6,
+          //   width: 122,
+          //   decoration: BoxDecoration(
+          //       color: AppColors.yellow,
+          //       borderRadius: BorderRadius.circular(8)),
+          // ),
           Padding(
             padding:
                 const EdgeInsets.only(left: 30, top: 32, right: 30, bottom: 41),

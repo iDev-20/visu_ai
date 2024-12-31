@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:visu_ai/components/navigation.dart';
+import 'package:visu_ai/components/slide_indicator.dart';
 import 'package:visu_ai/pages/onboarding/onboarding_page_two.dart';
 import 'package:visu_ai/resources/app_colors.dart';
 import 'package:visu_ai/resources/app_images.dart';
@@ -74,17 +75,20 @@ class _OnboardingPageOneState extends State<OnboardingPageOne> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      left: 16, top: 402, right: 16, bottom: 30),
+                      left: 16, top: 380, right: 16, bottom: 30),
                   child: Column(
                     children: [
-                      Container(
-                        height: 6,
-                        width: 122,
-                        decoration: BoxDecoration(
-                          color: AppColors.yellow,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
+                      const SlideIndicator(
+                        selectedIndex: true,
                       ),
+                      // Container(
+                      //   height: 6,
+                      //   width: 122,
+                      //   decoration: BoxDecoration(
+                      //     color: AppColors.yellow,
+                      //     borderRadius: BorderRadius.circular(8),
+                      //   ),
+                      // ),
                       const SizedBox(
                         height: 40,
                       ),
