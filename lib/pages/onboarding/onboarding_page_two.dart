@@ -9,10 +9,10 @@ class OnboardingPageTwo extends StatefulWidget {
   const OnboardingPageTwo({super.key});
 
   @override
-  State<OnboardingPageTwo> createState() => _ObBoardingPageState();
+  State<OnboardingPageTwo> createState() => _OnBoardingPageState();
 }
 
-class _ObBoardingPageState extends State<OnboardingPageTwo> {
+class _OnBoardingPageState extends State<OnboardingPageTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
